@@ -8,6 +8,8 @@
 
 **Goal**: In 2 hours, refactor and modernize **ONE** legacy banking function using GenAI tools to achieve "vibe coding" - infusing modern practices like readability, efficiency, security, scalability, and best practices while preserving core functionality.
 
+**Prize**: $1k prizes are up for grabs for standout submissions! 
+
 **Theme**: "Vibe Code Revival" - Transforming legacy banking code from tight coupling, poor error handling, outdated patterns, and security vulnerabilities into modern, maintainable solutions.
 
 **What You'll Do**:
