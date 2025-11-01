@@ -1,0 +1,8 @@
+{
+  "base_url": "http://localhost:8123",
+  "timeout": 30,
+  "max_retries": 3,
+  "retry_delay": 1.0,
+  "jwt_secret": "modern_banking_secret",
+  "log_level": "INFO"
+}

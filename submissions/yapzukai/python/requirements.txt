@@ -1,0 +1,35 @@
+# Modern Banking Client - Python Dependencies
+# Requirements for the comprehensive Python 3.11+ implementation
+
+# Core async HTTP client with session management
+aiohttp>=3.9.0
+
+# Modern CLI framework with colored output
+click>=8.1.0
+colorama>=0.4.6
+
+# Data validation and settings management
+pydantic>=2.0.0
+
+# JWT token handling
+python-jose[cryptography]>=3.3.0
+
+# Development and testing dependencies
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.5.0
+
+# Optional: Enhanced CLI features
+rich>=13.0.0  # For beautiful console output
+typer>=0.9.0  # Alternative to click for even more modern CLI
+
+# Optional: Configuration management
+python-dotenv>=1.0.0  # For .env file support
+pyyaml>=6.0  # For YAML config files
+
+# Optional: Performance monitoring
+structlog>=23.0.0  # Structured logging
+prometheus-client>=0.17.0  # Metrics collection

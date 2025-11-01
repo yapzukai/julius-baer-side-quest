@@ -1,0 +1,102 @@
+version: "3.8"
+
+services:
+  banking-server:
+    image: openjdk:17-jre-slim
+    container_name: banking-server
+    working_dir: /app
+    volumes:
+      - ./server:/app
+    command: ["java", "-jar", "demo-0.0.1-SNAPSHOT.jar"]
+    ports:
+      - "8123:8123"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - SERVER_PORT=8123
+    networks:
+      - banking-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8123/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  python-client:
+    build:
+      context: ./submissions/yapzukai/python
+      dockerfile: Dockerfile
+    container_name: python-banking-client
+    depends_on:
+      banking-server:
+        condition: service_healthy
+    environment:
+      - BANKING_API_URL=http://banking-server:8123
+      - LOG_LEVEL=INFO
+    networks:
+      - banking-network
+    volumes:
+      - ./submissions/yapzukai/python/logs:/app/logs
+
+  javascript-client:
+    build:
+      context: ./submissions/yapzukai/javascript
+      dockerfile: Dockerfile
+    container_name: js-banking-client
+    depends_on:
+      banking-server:
+        condition: service_healthy
+    environment:
+      - BANKING_API_URL=http://banking-server:8123
+      - NODE_ENV=production
+    networks:
+      - banking-network
+    volumes:
+      - ./submissions/yapzukai/javascript/logs:/app/logs
+
+  java-client:
+    build:
+      context: ./submissions/yapzukai/java
+      dockerfile: Dockerfile
+    container_name: java-banking-client
+    depends_on:
+      banking-server:
+        condition: service_healthy
+    environment:
+      - BANKING_API_URL=http://banking-server:8123
+      - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - banking-network
+    volumes:
+      - ./submissions/yapzukai/java/logs:/app/logs
+
+  monitoring:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - banking-network
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - ./monitoring/grafana/dashboards:/var/lib/grafana/dashboards
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning
+    networks:
+      - banking-network
+
+networks:
+  banking-network:
+    driver: bridge
+
+volumes:
+  prometheus_data:
+  grafana_data:

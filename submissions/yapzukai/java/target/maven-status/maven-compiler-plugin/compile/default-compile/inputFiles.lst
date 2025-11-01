@@ -1,0 +1,12 @@
+/Users/yapzukai/Documents/GitHub/julius-baer-side-quest/submissions/yapzukai/java/src/main/java/com/modernization/banking/metrics/PerformanceMetrics.java
+/Users/yapzukai/Documents/GitHub/julius-baer-side-quest/submissions/yapzukai/java/src/main/java/com/modernization/banking/client/ModernBankingClient.java
+/Users/yapzukai/Documents/GitHub/julius-baer-side-quest/submissions/yapzukai/java/src/main/java/com/modernization/banking/config/BankingClientConfiguration.java
+/Users/yapzukai/Documents/GitHub/julius-baer-side-quest/submissions/yapzukai/java/src/main/java/com/modernization/banking/model/AccountValidationResult.java
+/Users/yapzukai/Documents/GitHub/julius-baer-side-quest/submissions/yapzukai/java/src/main/java/com/modernization/banking/model/HealthCheckResult.java
+/Users/yapzukai/Documents/GitHub/julius-baer-side-quest/submissions/yapzukai/java/src/main/java/com/modernization/banking/model/TransferResult.java
+/Users/yapzukai/Documents/GitHub/julius-baer-side-quest/submissions/yapzukai/java/src/main/java/com/modernization/banking/model/AccountBalance.java
+/Users/yapzukai/Documents/GitHub/julius-baer-side-quest/submissions/yapzukai/java/src/main/java/com/modernization/banking/BankingClientApplication.java
+/Users/yapzukai/Documents/GitHub/julius-baer-side-quest/submissions/yapzukai/java/src/main/java/com/modernization/banking/auth/AuthenticationManager.java
+/Users/yapzukai/Documents/GitHub/julius-baer-side-quest/submissions/yapzukai/java/src/main/java/com/modernization/banking/validation/InputValidator.java
+/Users/yapzukai/Documents/GitHub/julius-baer-side-quest/submissions/yapzukai/java/src/main/java/com/modernization/banking/exception/BankingClientException.java
+/Users/yapzukai/Documents/GitHub/julius-baer-side-quest/submissions/yapzukai/java/src/main/java/com/modernization/banking/cli/BankingClientCommand.java
